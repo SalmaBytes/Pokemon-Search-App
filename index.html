@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokémon Search App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Pokémon Search App</h1>
+  </header>
+  <main>
+    <section class="container">
+      <form role="search" id="search-form" aria-label="Search Pokémon">
+        <label for="search-input">Search for Pokémon Name or ID:</label>
+        <input type="text" name="pokemon" id="search-input" required placeholder="Enter Pokémon name or ID" aria-describedby="search-instruction">
+        <button type="submit" id="search-button">Search</button>
+      </form>
+      <p id="search-instruction" hidden>Enter a Pokémon name or ID to search.</p >
+
+      <article class="output">
+        <section class="top-container">
+          <div class="name-and-id">
+            <span id="pokemon-name"></span>
+            <span id="pokemon-id"></span>
+          </div>
+          <div class="size">
+            <div id="weight"></div>
+            <div id="height"></div>
+          </div>
+          <div class="sprite-container" id="sprite-container" aria-live="polite"></div>
+          <div id="types"></div>
+        </section>
+
+        <section class="bottom-container">
+          <table aria-label="Base Stats">
+            <thead>
+              <tr>
+                <th>Base</th>
+                <th>Stats</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>HP:</td><td id="hp"></td></tr>
+              <tr><td>Attack:</td><td id="attack"></td></tr>
+              <tr><td>Defense:</td><td id="defense"></td></tr>
+              <tr><td>Sp. Attack:</td><td id="special-attack"></td></tr>
+              <tr><td>Sp. Defense:</td><td id="special-defense"></td></tr>
+              <tr><td>Speed:</td><td id="speed"></td></tr>
+            </tbody>
+          </table>
+        </section>
+      </article>
+    </section>
+  </main>
+  <script src="script.js" defer></script>
+</body>
+</html>

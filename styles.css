@@ -1,0 +1,232 @@
+:root {
+  --primary-color: #3a7bd5; /* Refined blue for a professional touch */
+  --secondary-color: #f0f4f8; /* Very light gray for a clean background */
+  --accent-color: #537895; /* Soft steel blue for accents */
+  --background-color: #ffffff; /* White for content background */
+  --text-color: #333333; /* Dark gray for readability */
+  --dark-text-color: #2d3e50; /* Slightly darker gray for emphasis */
+  --light-text-color: #66788a; /* Muted gray for secondary text */
+  --heading-text-color: #2d3e50; /* Professional dark for headings */
+  --table-header-bg: #3a7bd5; /* Primary color for header backgrounds */
+  --table-row-bg: #eaf2f8; /* Light blue-gray for row backgrounds */
+  --border-color: #d1dce5; /* Light border color */
+  --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Softer shadow */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-size: 2em;
+  color: var(--heading-text-color);
+  margin-bottom: 20px;
+  position: relative;
+  font-weight: 600;
+}
+
+h1::before, h1::after {
+  content: "";
+  position: absolute;
+  width: 20%;
+  height: 2px;
+  background-color: var(--accent-color);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+h1::before {
+  left: 0;
+}
+
+h1::after {
+  right: 0;
+}
+
+main {
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+  padding: 25px;
+  background-color: var(--background-color);
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: var(--box-shadow);
+  transition: box-shadow 0.3s ease;
+}
+
+main:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+main::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--primary-color);
+  border-radius: 12px;
+  z-index: -1;
+}
+
+#search-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#search-form label {
+  font-size: 16px;
+  color: var(--dark-text-color);
+  font-weight: 500;
+}
+
+#search-input {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+}
+
+#search-input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+#search-button {
+  padding: 12px;
+  font-size: 16px;
+  color: var(--background-color);
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+#search-button:hover {
+  background-color: var(--accent-color);
+}
+
+.output {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.top-container {
+  background-color: var(--table-row-bg);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  position: relative;
+}
+
+.top-container::before {
+  content: "Info";
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  font-size: 12px;
+  color: var(--accent-color);
+  background-color: var(--table-row-bg);
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+
+.name-and-id {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--dark-text-color);
+  margin-bottom: 10px;
+}
+
+.size {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  color: var(--light-text-color);
+}
+
+.sprite-container {
+  margin: 10px 0;
+}
+
+#types {
+  font-size: 16px;
+  color: var(--light-text-color);
+}
+
+.bottom-container {
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 8px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid var(--border-color);
+}
+
+tr:nth-child(even) td, tr:nth-child(odd) td {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+th {
+  background-color: var(--table-header-bg);
+  color: var(--background-color);
+  font-weight: bold;
+  position: relative;
+  border-bottom: 3px solid var(--accent-color);
+}
+
+td {
+  font-size: 16px;
+}
+
+.speed {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  main {
+      width: 100%;
+      padding: 20px;
+  }
+
+  h1 {
+      font-size: 1.5em;
+  }
+
+  #search-input, #search-button {
+      width: 100%;
+  }
+}
