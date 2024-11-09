@@ -11,7 +11,7 @@ A simple Pokémon search application that allows users to look up any Pokémon b
 
 ## Demo
 
-You can try the app live on GitHub Pages: [Pokémon Search App](https://your-username.github.io/pokemon-search-app/)
+You can try the app live on GitHub Pages: [Pokémon Search App](https://salmabytes.github.io/Pokemon-Search-App/)
 
 ## How to Use
 
