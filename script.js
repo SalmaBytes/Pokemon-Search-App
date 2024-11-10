@@ -19,7 +19,7 @@ const pokemonDetails = {
 // Fetch Pokémon data
 const fetchPokemonData = async () => {
   try {
-    const pokemonNameOrId = searchInput.value.trim();
+    const pokemonNameOrId = searchInput.value.trim().toLowerCase();
     const response = await fetch(`https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/${pokemonNameOrId}`);
     if (!response.ok) throw new Error("Pokémon not found");
     return await response.json();
@@ -30,6 +30,7 @@ const fetchPokemonData = async () => {
 
 // Display error message
 const displayError = (message) => {
+  searchInput.value = "";
   spriteContainer.innerHTML = `<p class="error">${message}</p >`;
   resetDisplay();
 };
